@@ -1,21 +1,22 @@
 # webApi-angularjs
 webApi client-side implementation using Angular.js
 
-###  Purpose
+
+##  Purpose
 
 A special Angular.js module to improve management and handling http-requests relationship between client and serveer.
  
 All that you need - just modify <b>DOMAIN url</b> in <i>"config"</i>, thereafter add a list of htt-requests into <i>"requests"</i> according to the specified format.
 
-### Advantages
+## Advantages
 
 <ol>
 <li> Simple to manage, scale. </li>
-<li> Has a special GET formatter to allow user work with objects inside $http.get methods. </li>
-<li> Independent module which may be integrated into any Angular.js application. </li>
+<li> Has a special formatter to allow user work with objects inside $http methods. </li>
+<li> Independent module which may be integrated into different Angular.js application. </li>
 </ol>
 
-### How to use
+## How to use
 
 Inject module into your Angular.js application:
 
@@ -45,11 +46,11 @@ Edit "<i>main/requests.js</i>" to add a new webApi methods into your app:
 
 <b> InvokeName </b> - internal method name to invoke it within application and establish a connection with webApi module.
 
-### Samples
+## Samples
 
 DOMAIN: http://yourdomain.com/ 
 
-#### *** GET-methods ***
+### *** GET-methods ***
 
 ```javascript
 /**************************/
@@ -102,7 +103,7 @@ webApi.getNewsDetailsById({
 
 ```
 
-#### *** POST-methods ***
+### *** POST-methods ***
 
 ```javascript
 /*************************************/
@@ -124,8 +125,8 @@ webApi.login(request).success( // ...some actions...
 
 ```
 
+### *** PUT-methods ***
 
-#### *** PUT-methods ***
 ```javascript
 /*************************************/
 /* Update user details. */
@@ -145,8 +146,8 @@ webApi.updateUser({
 
 ```
 
+### *** DELETE-methods ***
 
-#### *** DELETE-methods ***
 ```javascript
 /*************************************/
 /* Delete user. */
@@ -164,8 +165,7 @@ webApi.updateUser({
 
 ```
 
-
-#### *** Sending a request options ***
+### *** Sending a request options ***
 
 To send a specific request options, foremost <u>CustomOptions: <b>true</b></u>. in "<i>requests.js</i>". Then use a following syntax:
 You may specify there 'headers', 'responseType', 'timeout' etc. See https://docs.angularjs.org/api/ng/service/$http in section "Arguments" for details.

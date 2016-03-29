@@ -12,7 +12,7 @@ All that you need - just modify <b>DOMAIN url</b> in <i>"config"</i>, thereafter
 
 <ol>
 <li> Simple to manage, scalable. </li>
-<li> Has a special formatter to allow user work with objects inside $http methods. </li>
+<li> Has a special formatter which allows user to work with objects inside $http methods. </li>
 <li> Independent module which may be integrated into different Angular.js application. </li>
 </ol>
 

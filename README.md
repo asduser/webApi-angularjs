@@ -11,7 +11,7 @@ All that you need - just modify <b>DOMAIN url</b> in <i>"config"</i>, thereafter
 ## Advantages
 
 <ol>
-<li> Simple to manage, scale. </li>
+<li> Simple to manage, scalable. </li>
 <li> Has a special formatter to allow user work with objects inside $http methods. </li>
 <li> Independent module which may be integrated into different Angular.js application. </li>
 </ol>

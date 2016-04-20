@@ -53,42 +53,44 @@ In controller:
 
 (function(){
 
-    angular
-        .module("_webApi_")
-        .service("webApi.requests", webApiRequests);
+   "use strict";
 
-    function webApiRequests(catAccount, catAdminManage){
+   angular
+       .module("myApp", ["_webApi_"])
+       .controller("myCtrl", myCtrl);
 
-        /**
-         * Obtain the arguments collection, which should contain a suitable request groups.
-         * Then via special iterator check each group DATA and retrieve the list of requests.
-         * Thus, the result will be a concatenated array of objects.
-         * @type {Array}
-         */
-        var data = [];
-        [].slice.call(arguments).forEach(function(arg){
-            arg.DATA.forEach(function(r){
-                data.push(r);
-            });
+   /**
+    * Declare a main controller.
+    * @param $scope
+    * @param {"webApi"} webApi
+    */
+   function myCtrl($scope, webApi){
+   
+        $scope.title = "Test Controller";
+
+       // This is just test data to represent a current version of webApi library.
+       // To edit an existing request go to the "webApi/categories/" directory.
+
+       // e.g. # 1
+       webApi.login({
+        "Login": "Test",
+        "Password": "qwerty"
+       }).success(function(data){ 
+            //some actions...  
         });
 
-        /**
-         * Return all API methods.
-         * @returns {{Url: string, CustomOptions: boolean, Method: string, InvokeName: string}[]}
-         */
-        this.load = function(){
+       // e.g. # 2
+       webApi.logout([]).success(function(data){ 
+            //some actions...  
+        });
 
-            return data;
+   }
 
-        };
-
-    }
-
-    // IoC container.
-    webApiRequests.$inject = [
-        "cat.account",
-        "cat.adminManage"
-    ];
+   // Ioc container.
+   myCtrl.$inject = [
+       "$scope",
+       "webApi"
+   ];
 
 })();
 

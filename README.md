@@ -19,7 +19,7 @@ angular.module('myApp', ['_webApi_']);
 // ...
 ```
 
-To edit any global parameter use *"config/webApiConstants.js"* file. First of all, you need to change the DOMAIN field:
+To edit any global parameter use *"config/webApiSettings.js"* file. First of all, you need to change the DOMAIN field:
 
 ```javascript
 "DOMAIN": "http:// {YourApiUrl} /",

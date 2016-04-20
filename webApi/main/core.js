@@ -15,33 +15,10 @@
     function webApi($http, webApiRequests, webApiScenarios, webApiConstants, optimizer) {
 
         var DOMAIN = webApiConstants.DOMAIN;
-        // load all actions to work with server-side API.
+        // Load all actions to work with server-side API.
         var actionList = webApiRequests.load();
-        // inherit webApi methods to allow user invoke it manually within app.
+        // Inherit webApi methods to allow user invoke it manually within app.
         webApiScenarios.inject(createRequest, this);
-
-        /**
-         * Define an availability of specific http-request.
-         * @param data {Object}
-         * @returns {boolean}
-         */
-        this.isServerAvailable = function (data) {
-            if (data.State == 500) {
-
-                // Some actions to handle error. Example: console.log(data).
-                // Handling behaviour directly depends from internal architecture
-                // existing response body.
-                // You may declare your body response like this:
-                //
-                // { State: 500, Result: null, Exception: "Incorrect login or password." } etc...
-                //
-                // Therefore use Exception field to display message on UI. It may be showed inside
-                // simple alert(data.Exception), console.log(data.Exception) or smt modal-window.
-
-            } else {
-                return true;
-            }
-        };
 
         /**
          * Derive type of http method and generate appropriate request with promise.
@@ -109,7 +86,7 @@
                     } else if (template && type != "get" && type != "delete") {
                         return $http[type](DOMAIN + optimizer.toUrl(template.Url, params), params.data, opts);
                     } else {
-                        return $http.post(DOMAIN + defineHttpProperty(action, "Url"), params, opts);
+                        return $http[type](DOMAIN + defineHttpProperty(action, "Url"), params, opts);
                     }
                 }
             };

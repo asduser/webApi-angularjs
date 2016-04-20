@@ -1,12 +1,5 @@
 # webApi-angularjs
-webApi client-side implementation using Angular.js
-
-
-##  Purpose
-
-A special Angular.js module to improve management and handling http-requests relationship between client and serveer.
- 
-All that you need - just modify <b>DOMAIN url</b> in <i>"config"</i>, thereafter add a list of htt-requests into <i>"requests"</i> according to the specified format.
+RESTful webApi module using Angular.js.
 
 ## Advantages
 
@@ -16,7 +9,7 @@ All that you need - just modify <b>DOMAIN url</b> in <i>"config"</i>, thereafter
 <li> Independent module which may be integrated into different Angular.js application. </li>
 </ol>
 
-## How to use
+## Installation
 
 Inject module into your Angular.js application:
 
@@ -26,13 +19,13 @@ angular.module('myApp', ['_webApi_']);
 // ...
 ```
 
-To edit any global parameter use "<i>config/webApiConstants.js</i>" file. First of all, you need to change the DOMAIN field:
+To edit any global parameter use *"config/webApiConstants.js"* file. First of all, you need to change the DOMAIN field:
 
 ```javascript
 "DOMAIN": "http:// {YourApiUrl} /",
 ```
 
-Edit "<i>main/requests.js</i>" to add a new webApi methods into your app:
+Edit *"main/requests.js"* to add a new webApi methods into your app:
 
 ```javascript
 { Url: 'api/users/get-all', CustomOptions: false, Method: 'get', InvokeName: 'getUsers' }
@@ -45,6 +38,61 @@ Edit "<i>main/requests.js</i>" to add a new webApi methods into your app:
 <b> Method </b> - type of http-method (GET, POST, PUT, DELETE, UPDATE etc.).
 
 <b> InvokeName </b> - internal method name to invoke it within application and establish a connection with webApi module.
+
+## How to use
+
+1. Go to *webApi/categories/* directory.
+2. Create a new file, which will be responsible for some functional requests group to work with API. For example: if you have a lot of similar requests which contain some repeating code, just include them into appropriate category ( 'api/food/manage/{id}/delete', 'api/food/manage/{id}/update' -> *foodManage.js*).
+3. Fill each request using an existing template (see '*webApi/categories/account.js*' file).
+4. Then add your created constant name into '*webApi/categories-handler/requests.js*'.
+5. Now you may use new methods in application via special "InvokeName" parameter.
+
+In controller:
+
+```javascript
+
+(function(){
+
+    angular
+        .module("_webApi_")
+        .service("webApi.requests", webApiRequests);
+
+    function webApiRequests(catAccount, catAdminManage){
+
+        /**
+         * Obtain the arguments collection, which should contain a suitable request groups.
+         * Then via special iterator check each group DATA and retrieve the list of requests.
+         * Thus, the result will be a concatenated array of objects.
+         * @type {Array}
+         */
+        var data = [];
+        [].slice.call(arguments).forEach(function(arg){
+            arg.DATA.forEach(function(r){
+                data.push(r);
+            });
+        });
+
+        /**
+         * Return all API methods.
+         * @returns {{Url: string, CustomOptions: boolean, Method: string, InvokeName: string}[]}
+         */
+        this.load = function(){
+
+            return data;
+
+        };
+
+    }
+
+    // IoC container.
+    webApiRequests.$inject = [
+        "cat.account",
+        "cat.adminManage"
+    ];
+
+})();
+
+```
 
 ## Samples
 

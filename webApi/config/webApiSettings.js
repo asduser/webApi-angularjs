@@ -6,7 +6,7 @@
         .module("_webApi_")
         .constant("webApi.constants", {
 
-            "DOMAIN": "http:// {YourApiUrl} /",
+            "DOMAIN": "Your API domen",
             "SESSION_EXPIRE": null
 
         });

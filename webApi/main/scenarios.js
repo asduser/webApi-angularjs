@@ -6,7 +6,7 @@
 
     /**
      * Scenarios to manage all http-requests from the storage.
-     * @param {"webAPi.requests"} webApiRequests
+     * @param {Object} webApiRequests
      */
     function webApiScenarios(webApiRequests){
 
@@ -46,7 +46,6 @@
                         var currentRequest = requests.filter(function(req){
                             return req.InvokeName == m;
                         });
-                        console.log(m, currentRequest, params);
                         var opts = currentRequest[0].CustomOptions && params.options || currentRequest[0].CustomOptions && params[params.length-1];                        
                         return createRequest(m, params, opts);
                     }
@@ -55,7 +54,7 @@
             }
 
             /**
-             * Retrieve appropriate collection exists http-methods.
+             * Retrieve an appropriate collection of existing http-methods.
              * @returns {Array}
              */
             function getMethods(){

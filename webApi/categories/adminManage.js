@@ -7,7 +7,7 @@
             "DATA": [
 
                 // This methods list is just for example.
-                { Url: '/api/admin/get/profile/{id}', CustomOptions: false, Method: 'get', InvokeName: 'getAdminProfileById' },
+                { Url: '/api/admin/delete/profile/{id}', CustomOptions: false, Method: 'delete', InvokeName: 'deleteAdminProfileById' },
                 { Url: '/api/admin/update/profile/{id}/block', CustomOptions: false, Method: 'put', InvokeName: 'blockAdminProfileById' }
 
             ]

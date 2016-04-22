@@ -28,13 +28,13 @@
          * @returns {*}
          */
         function createRequest(action, params, opts) {
-            var request, method = defineHttpProperty(action, "Method");
+            var method = defineHttpProperty(action, "Method");
             if (!angular.isArray(params)) {
                 return formatRequest(method).object(action, params, opts);
             } else {
                 return formatRequest(method).array(action, params, opts);
             }
-            return $http[method](request, opts);
+            //return $http[method](request, opts);
         }
 
         /**
@@ -78,15 +78,28 @@
                     return $http.get(DOMAIN + defineHttpProperty(action, "Url") + definePrefix(params), opts);
                 },
                 object: function (action, params, opts) {
+
                     var template = actionList.find(function(el){ return el.Url.indexOf('{') > -1 && el.InvokeName == action; });
-                    if (template && type == 'get' || type == 'delete') {
-                        return $http[type](DOMAIN + optimizer.toUrl(template.Url, params), opts);
-                    } else if (!template && type == "get") {
-                        return $http.get(DOMAIN + defineHttpProperty(action, "Url") + optimizer.modify(params), opts);
-                    } else if (template && type != "get" && type != "delete") {
-                        return $http[type](DOMAIN + optimizer.toUrl(template.Url, params), params.data, opts);
+
+                    if (template) {
+                        switch (type) {
+                            case "get":
+                            case "delete":
+                                return $http[type](DOMAIN + optimizer.toUrl(template.Url, params), opts);
+                                break;
+                            default:
+                                return $http[type](DOMAIN + optimizer.toUrl(template.Url, params), params.data, opts);
+                                break;
+                        }
                     } else {
-                        return $http[type](DOMAIN + defineHttpProperty(action, "Url"), params, opts);
+                        switch (type) {
+                            case "get":
+                                return $http[type](DOMAIN + defineHttpProperty(action, "Url") + optimizer.modify(params), opts);
+                                break;
+                            default:
+                                return $http[type](DOMAIN + defineHttpProperty(action, "Url"), params, opts);
+                                break;
+                        }
                     }
                 }
             };

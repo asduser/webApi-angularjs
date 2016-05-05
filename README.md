@@ -1,44 +1,6 @@
 # webApi-angularjs
 RESTful webApi module using Angular.js.
 
-## Advantages
-
-<ol>
-<li> Simple to manage, scalable. </li>
-<li> Has a special formatter which allows user to work with objects inside $http methods. </li>
-<li> Independent module which may be integrated into different Angular.js application. </li>
-</ol>
-
-## Installation
-
-Inject module into your Angular.js application:
-
-```javascript
-// ...
-angular.module('myApp', ['_webApi_']);
-// ...
-```
-
-To edit any global parameter use *"config/webApiSettings.js"* file. First of all, you need to change the DOMAIN field:
-
-```javascript
-"DOMAIN": "http:// {YourApiUrl} /",
-```
-
-Edit *"main/requests.js"* to add a new webApi methods into your app:
-
-```javascript
-{ Url: 'api/users/get-all', CustomOptions: false, Method: 'get', InvokeName: 'getUsers' }
-```
-
-<b> Url </b> - existing api-method to send http-request.
-
-<b> CustomOptions </b> - true\false to use a 3-rd 'options' parameter in requests. This is helpful when you need use a specific CORS modificators. See examples for details.
-
-<b> Method </b> - type of http-method (GET, POST, PUT, DELETE, UPDATE etc.).
-
-<b> InvokeName </b> - internal method name to invoke it within application and establish a connection with webApi module.
-
 ## How to use
 
 1. Go to *webApi/categories/* directory.
@@ -46,101 +8,63 @@ Edit *"main/requests.js"* to add a new webApi methods into your app:
 3. Fill each request using an existing template (see '*webApi/categories/account.js*' file).
 4. Then add your created constant name into '*webApi/categories-handler/requests.js*'.
 5. Now you may use new methods in application via special "InvokeName" parameter.
-
-In controller:
-
-```javascript
-
-(function(){
-
-   "use strict";
-
-   angular
-       .module("myApp", ["_webApi_"])
-       .controller("myCtrl", myCtrl);
-
-   /**
-    * Declare a main controller.
-    * @param $scope
-    * @param {"webApi"} webApi
-    */
-   function myCtrl($scope, webApi){
-   
-        $scope.title = "Test Controller";
-
-       // This is just test data to represent a current version of webApi library.
-       // To edit an existing request go to the "webApi/categories/" directory.
-
-       // e.g. # 1
-       webApi.login({
-        "Login": "Test",
-        "Password": "qwerty"
-       }).success(function(data){ 
-            //some actions...  
-        });
-
-       // e.g. # 2
-       webApi.logout([]).success(function(data){ 
-            //some actions...  
-        });
-
-   }
-
-   // Ioc container.
-   myCtrl.$inject = [
-       "$scope",
-       "webApi"
-   ];
-
-})();
-
-```
+6. To edit APi settings use *"config/webApiSettings.js"* file.
 
 ## Samples
 
 DOMAIN: http://yourdomain.com/ 
 
-### *** GET-methods ***
+### *** GET. Case #1 ***
 
 ```javascript
-/**************************/
-/* Get all existing news. */
-/**************************/
 
-// Declare request.
+// url -> http://yourdomain.com/admin/news/
+
+// request
 { Url: 'admin/news/', CustomOptions: false, Method: 'get', InvokeName: 'getNews' }
 
-// Invoke method and specify an appropriate arguments.
+// Invoke method.
 webApi.getNews([]).success( // ...some actions...
 
-// Your request is: http://yourdomain.com/admin/news/
+```
 
+### *** GET. Case #2 ***
 
-/*************************************/
-/* Get news details by specified ID. */
-/*************************************/
+```javascript
 
-// Declare request. Case # 1.
+// url -> http://yourdomain.com/admin/news/3
+
+// Declare request.
 { Url: 'admin/news/', CustomOptions: false, Method: 'get', InvokeName: 'getNewsDetailsById' }
 
-// Invoke method and specify an appropriate arguments.
+// Invoke method.
 webApi.getNewsDetailsById([3]).success( // ...some actions...
 
-// Your request is: http://yourdomain.com/admin/news/3
+```
 
+### *** GET. Case #3 ***
 
-// Declare request. Case # 2.
+```javascript
+
+// url -> http://yourdomain.com/admin/news/3/title
+
+// Declare request.
 { Url: 'admin/news/{id}/title', CustomOptions: false, Method: 'get', InvokeName: 'getNewsDetailsById' }
 
-// Invoke method and specify an appropriate arguments.
+// Invoke method.
 webApi.getNewsDetailsById({
   url: { id: 3}
 }).success( // ...some actions...
 
-// Your request is: http://yourdomain.com/admin/news/3/title
+```
 
+### *** GET. Case #4 ***
 
-// Declare request. Case # 3.
+```javascript
+
+// url -> http://yourdomain.com/admin/news/10?category=sport&period=week
+
+// Declare request.
 { Url: 'admin/news', CustomOptions: false, Method: 'get', InvokeName: 'getNewsDetailsById' }
 
 // Invoke method and specify an appropriate arguments.
@@ -149,69 +73,58 @@ webApi.getNewsDetailsById({
   after: { "category": "sport", "period": "week" }
 }).success( // ...some actions...
 
-// Your request is: http://yourdomain.com/admin/news/10?category=sport&period=week
+```
+
+### *** DELETE. Case #1 ***
+
+```javascript
+
+// url -> http://yourdomain.com/admin/delete-user/10
+
+// Declare request.
+{ Url: 'admin/delete-user/{id}', CustomOptions: false, Method: 'delete', InvokeName: 'deleteUser' }
+
+// Invoke method.
+webApi.updateUser({
+  url: { "id": 10 }
+}).success( // ...some actions...
 
 ```
 
-### *** POST-methods ***
+### *** POST, PUT, UPDATE. Case #1 ***
 
 ```javascript
-/*************************************/
-/* Login into account. */
-/*************************************/
+
+// url -> http://yourdomain.com/api/login
+// model -> { Login: "test", Password: "test1" }
 
 // Declare request.
 { Url: 'api/login', CustomOptions: false, Method: 'post', InvokeName: 'login' }
 
-// Invoke method and specify an appropriate arguments.
+// Invoke method.
 var request = {
   Login: "test",
   Password: "test1"
 };
 webApi.login(request).success( // ...some actions...
 
-// Your request is: http://yourdomain.com/api/login
-// Request model is: { Login: "test", Password: "test1" }
-
 ```
 
-### *** PUT-methods ***
+### *** POST, PUT, UPDATE. Case #2 ***
 
 ```javascript
-/*************************************/
-/* Update user details. */
-/*************************************/
+
+// url -> http://yourdomain.com/admin/manage/10/update
+// model -> { "name": "Bob", "age": 20 }
 
 // Declare request.
 { Url: 'admin/manage/{id}/{action}', CustomOptions: false, Method: 'put', InvokeName: 'updateUser' }
 
-// Invoke method and specify an appropriate arguments.
+// Invoke method.
 webApi.updateUser({
   url: { "id": 10, "action": "update" },
   data: { "name": "Bob", "age": 20 }
 }).success( // ...some actions...
-
-// Your request is: http://yourdomain.com/admin/manage/10/update
-// Request model is: { "name": "Bob", "age": 20 }
-
-```
-
-### *** DELETE-methods ***
-
-```javascript
-/*************************************/
-/* Delete user. */
-/*************************************/
-
-// Declare request.
-{ Url: 'admin/delete-user/{id}', CustomOptions: false, Method: 'delete', InvokeName: 'deleteUser' }
-
-// Invoke method and specify an appropriate arguments.
-webApi.updateUser({
-  url: { "id": 10 }
-}).success( // ...some actions...
-
-// Your request is: http://yourdomain.com/admin/delete-user/10
 
 ```
 

@@ -1,64 +1,42 @@
-<!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>Webapi-angularjs by asduser</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-  </head>
-  <body>
-    <section class="page-header">
-      <h1 class="project-name">Webapi-angularjs</h1>
-      <h2 class="project-tagline">webApi client-side manager using Angular.js</h2>
-      <a href="https://github.com/asduser/webApi-angularjs" class="btn">View on GitHub</a>
-      <a href="https://github.com/asduser/webApi-angularjs/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/asduser/webApi-angularjs/tarball/master" class="btn">Download .tar.gz</a>
-    </section>
+<!doctype html>
+<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
+<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on https://github.com/jonrohan -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-    <section class="main-content">
-      <h1>
-<a id="webapi-angularjs" class="anchor" href="#webapi-angularjs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>webApi-angularjs</h1>
+  <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" href="stylesheets/github-dark.css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="javascripts/script.js"></script>
 
-<p>RESTful webApi module using Angular.js.</p>
+  <title>Webapi-angularjs</title>
+  <meta name="description" content="webApi client-side manager using Angular.js">
 
-<h2>
-<a id="advantages" class="anchor" href="#advantages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Advantages</h2>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<ol>
-<li> Simple to manage, scalable. </li>
-<li> Has a special formatter which allows user to work with objects inside $http methods. </li>
-<li> Independent module which may be integrated into different Angular.js application. </li>
-</ol>
+</head>
 
-<h2>
-<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+<body>
 
-<p>Inject module into your Angular.js application:</p>
-
-<div class="highlight highlight-source-js"><pre><span class="pl-c">// ...</span>
-<span class="pl-smi">angular</span>.<span class="pl-en">module</span>(<span class="pl-s"><span class="pl-pds">'</span>myApp<span class="pl-pds">'</span></span>, [<span class="pl-s"><span class="pl-pds">'</span>_webApi_<span class="pl-pds">'</span></span>]);
-<span class="pl-c">// ...</span></pre></div>
-
-<p>To edit any global parameter use <em>"config/webApiSettings.js"</em> file. First of all, you need to change the DOMAIN field:</p>
-
-<div class="highlight highlight-source-js"><pre><span class="pl-s"><span class="pl-pds">"</span>DOMAIN<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>http:// {YourApiUrl} /<span class="pl-pds">"</span></span>,</pre></div>
-
-<p>Edit <em>"main/requests.js"</em> to add a new webApi methods into your app:</p>
-
-<div class="highlight highlight-source-js"><pre>{ Url<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>api/users/get-all<span class="pl-pds">'</span></span>, CustomOptions<span class="pl-k">:</span> <span class="pl-c1">false</span>, Method<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>get<span class="pl-pds">'</span></span>, InvokeName<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>getUsers<span class="pl-pds">'</span></span> }</pre></div>
-
-<p><b> Url </b> - existing api-method to send http-request.</p>
-
-<p><b> CustomOptions </b> - true\false to use a 3-rd 'options' parameter in requests. This is helpful when you need use a specific CORS modificators. See examples for details.</p>
-
-<p><b> Method </b> - type of http-method (GET, POST, PUT, DELETE, UPDATE etc.).</p>
-
-<p><b> InvokeName </b> - internal method name to invoke it within application and establish a connection with webApi module.</p>
-
-<h2>
+  <div class="wrapper">
+    <header>
+      <h1 class="title">Webapi-angularjs</h1>
+    </header>
+    <div id="container">
+      <p class="tagline">webApi client-side manager using Angular.js</p>
+      <div id="main" role="main">
+        <div class="download-bar">
+        <div class="inner">
+          <a href="https://github.com/asduser/webApi-angularjs/tarball/master" class="download-button tar"><span>Download</span></a>
+          <a href="https://github.com/asduser/webApi-angularjs/zipball/master" class="download-button zip"><span>Download</span></a>
+          <a href="https://github.com/asduser/webApi-angularjs" class="code">View Webapi-angularjs on GitHub</a>
+        </div>
+        <span class="blc"></span><span class="trc"></span>
+        </div>
+        <article class="markdown-body">
+          <h2>
 <a id="how-to-use" class="anchor" href="#how-to-use" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to use</h2>
 
 <ol>
@@ -67,54 +45,8 @@
 <li>Fill each request using an existing template (see '<em>webApi/categories/account.js</em>' file).</li>
 <li>Then add your created constant name into '<em>webApi/categories-handler/requests.js</em>'.</li>
 <li>Now you may use new methods in application via special "InvokeName" parameter.</li>
+<li>To edit APi settings use <em>"config/webApiSettings.js"</em> file.</li>
 </ol>
-
-<p>In controller:</p>
-
-<div class="highlight highlight-source-js"><pre>
-(<span class="pl-k">function</span>(){
-
-   <span class="pl-s"><span class="pl-pds">"</span>use strict<span class="pl-pds">"</span></span>;
-
-   angular
-       .<span class="pl-en">module</span>(<span class="pl-s"><span class="pl-pds">"</span>myApp<span class="pl-pds">"</span></span>, [<span class="pl-s"><span class="pl-pds">"</span>_webApi_<span class="pl-pds">"</span></span>])
-       .<span class="pl-en">controller</span>(<span class="pl-s"><span class="pl-pds">"</span>myCtrl<span class="pl-pds">"</span></span>, myCtrl);
-
-   <span class="pl-c">/**</span>
-<span class="pl-c">    * Declare a main controller.</span>
-<span class="pl-c">    * <span class="pl-k">@param</span> $scope</span>
-<span class="pl-c">    * <span class="pl-k">@param</span> {"webApi"} webApi</span>
-<span class="pl-c">    */</span>
-   <span class="pl-k">function</span> <span class="pl-en">myCtrl</span>(<span class="pl-smi">$scope</span>, <span class="pl-smi">webApi</span>){
-
-        <span class="pl-smi">$scope</span>.<span class="pl-c1">title</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>Test Controller<span class="pl-pds">"</span></span>;
-
-       <span class="pl-c">// This is just test data to represent a current version of webApi library.</span>
-       <span class="pl-c">// To edit an existing request go to the "webApi/categories/" directory.</span>
-
-       <span class="pl-c">// e.g. # 1</span>
-       <span class="pl-smi">webApi</span>.<span class="pl-en">login</span>({
-        <span class="pl-s"><span class="pl-pds">"</span>Login<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>Test<span class="pl-pds">"</span></span>,
-        <span class="pl-s"><span class="pl-pds">"</span>Password<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>qwerty<span class="pl-pds">"</span></span>
-       }).<span class="pl-en">success</span>(<span class="pl-k">function</span>(<span class="pl-smi">data</span>){ 
-            <span class="pl-c">//some actions...  </span>
-        });
-
-       <span class="pl-c">// e.g. # 2</span>
-       <span class="pl-smi">webApi</span>.<span class="pl-en">logout</span>([]).<span class="pl-en">success</span>(<span class="pl-k">function</span>(<span class="pl-smi">data</span>){ 
-            <span class="pl-c">//some actions...  </span>
-        });
-
-   }
-
-   <span class="pl-c">// Ioc container.</span>
-   <span class="pl-smi">myCtrl</span>.<span class="pl-smi">$inject</span> <span class="pl-k">=</span> [
-       <span class="pl-s"><span class="pl-pds">"</span>$scope<span class="pl-pds">"</span></span>,
-       <span class="pl-s"><span class="pl-pds">"</span>webApi<span class="pl-pds">"</span></span>
-   ];
-
-})();
-</pre></div>
 
 <h2>
 <a id="samples" class="anchor" href="#samples" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Samples</h2>
@@ -122,46 +54,53 @@
 <p>DOMAIN: <a href="http://yourdomain.com/">http://yourdomain.com/</a> </p>
 
 <h3>
-<a id="-get-methods-" class="anchor" href="#-get-methods-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>*** GET-methods ***</h3>
+<a id="-get-case-1-" class="anchor" href="#-get-case-1-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>*** GET. Case #1 ***</h3>
 
-<div class="highlight highlight-source-js"><pre><span class="pl-c">/**************************/</span>
-<span class="pl-c">/* Get all existing news. */</span>
-<span class="pl-c">/**************************/</span>
+<div class="highlight highlight-source-js"><pre>
+<span class="pl-c">// url -&gt; http://yourdomain.com/admin/news/</span>
 
-<span class="pl-c">// Declare request.</span>
+<span class="pl-c">// request</span>
 { Url<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>admin/news/<span class="pl-pds">'</span></span>, CustomOptions<span class="pl-k">:</span> <span class="pl-c1">false</span>, Method<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>get<span class="pl-pds">'</span></span>, InvokeName<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>getNews<span class="pl-pds">'</span></span> }
 
-<span class="pl-c">// Invoke method and specify an appropriate arguments.</span>
+<span class="pl-c">// Invoke method.</span>
 <span class="pl-smi">webApi</span>.<span class="pl-en">getNews</span>([]).<span class="pl-en">success</span>( <span class="pl-c">// ...some actions...</span>
+</pre></div>
 
-<span class="pl-c">// Your request is: http://yourdomain.com/admin/news/</span>
+<h3>
+<a id="-get-case-2-" class="anchor" href="#-get-case-2-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>*** GET. Case #2 ***</h3>
 
+<div class="highlight highlight-source-js"><pre>
+<span class="pl-c">// url -&gt; http://yourdomain.com/admin/news/3</span>
 
-<span class="pl-c">/*************************************/</span>
-<span class="pl-c">/* Get news details by specified ID. */</span>
-<span class="pl-c">/*************************************/</span>
-
-<span class="pl-c">// Declare request. Case # 1.</span>
+<span class="pl-c">// Declare request.</span>
 { Url<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>admin/news/<span class="pl-pds">'</span></span>, CustomOptions<span class="pl-k">:</span> <span class="pl-c1">false</span>, Method<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>get<span class="pl-pds">'</span></span>, InvokeName<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>getNewsDetailsById<span class="pl-pds">'</span></span> }
 
-<span class="pl-c">// Invoke method and specify an appropriate arguments.</span>
+<span class="pl-c">// Invoke method.</span>
 <span class="pl-smi">webApi</span>.<span class="pl-en">getNewsDetailsById</span>([<span class="pl-c1">3</span>]).<span class="pl-en">success</span>( <span class="pl-c">// ...some actions...</span>
+</pre></div>
 
-<span class="pl-c">// Your request is: http://yourdomain.com/admin/news/3</span>
+<h3>
+<a id="-get-case-3-" class="anchor" href="#-get-case-3-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>*** GET. Case #3 ***</h3>
 
+<div class="highlight highlight-source-js"><pre>
+<span class="pl-c">// url -&gt; http://yourdomain.com/admin/news/3/title</span>
 
-<span class="pl-c">// Declare request. Case # 2.</span>
+<span class="pl-c">// Declare request.</span>
 { Url<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>admin/news/{id}/title<span class="pl-pds">'</span></span>, CustomOptions<span class="pl-k">:</span> <span class="pl-c1">false</span>, Method<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>get<span class="pl-pds">'</span></span>, InvokeName<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>getNewsDetailsById<span class="pl-pds">'</span></span> }
 
-<span class="pl-c">// Invoke method and specify an appropriate arguments.</span>
+<span class="pl-c">// Invoke method.</span>
 <span class="pl-smi">webApi</span>.<span class="pl-en">getNewsDetailsById</span>({
   url<span class="pl-k">:</span> { id<span class="pl-k">:</span> <span class="pl-c1">3</span>}
 }).<span class="pl-en">success</span>( <span class="pl-c">// ...some actions...</span>
+</pre></div>
 
-<span class="pl-c">// Your request is: http://yourdomain.com/admin/news/3/title</span>
+<h3>
+<a id="-get-case-4-" class="anchor" href="#-get-case-4-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>*** GET. Case #4 ***</h3>
 
+<div class="highlight highlight-source-js"><pre>
+<span class="pl-c">// url -&gt; http://yourdomain.com/admin/news/10?category=sport&amp;period=week</span>
 
-<span class="pl-c">// Declare request. Case # 3.</span>
+<span class="pl-c">// Declare request.</span>
 { Url<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>admin/news<span class="pl-pds">'</span></span>, CustomOptions<span class="pl-k">:</span> <span class="pl-c1">false</span>, Method<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>get<span class="pl-pds">'</span></span>, InvokeName<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>getNewsDetailsById<span class="pl-pds">'</span></span> }
 
 <span class="pl-c">// Invoke method and specify an appropriate arguments.</span>
@@ -169,67 +108,56 @@
   before<span class="pl-k">:</span> [<span class="pl-s"><span class="pl-pds">'</span>10<span class="pl-pds">'</span></span>],
   after<span class="pl-k">:</span> { <span class="pl-s"><span class="pl-pds">"</span>category<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>sport<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>period<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>week<span class="pl-pds">"</span></span> }
 }).<span class="pl-en">success</span>( <span class="pl-c">// ...some actions...</span>
-
-<span class="pl-c">// Your request is: http://yourdomain.com/admin/news/10?category=sport&amp;period=week</span>
 </pre></div>
 
 <h3>
-<a id="-post-methods-" class="anchor" href="#-post-methods-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>*** POST-methods ***</h3>
+<a id="-delete-case-1-" class="anchor" href="#-delete-case-1-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>*** DELETE. Case #1 ***</h3>
 
-<div class="highlight highlight-source-js"><pre><span class="pl-c">/*************************************/</span>
-<span class="pl-c">/* Login into account. */</span>
-<span class="pl-c">/*************************************/</span>
+<div class="highlight highlight-source-js"><pre>
+<span class="pl-c">// url -&gt; http://yourdomain.com/admin/delete-user/10</span>
+
+<span class="pl-c">// Declare request.</span>
+{ Url<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>admin/delete-user/{id}<span class="pl-pds">'</span></span>, CustomOptions<span class="pl-k">:</span> <span class="pl-c1">false</span>, Method<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>delete<span class="pl-pds">'</span></span>, InvokeName<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>deleteUser<span class="pl-pds">'</span></span> }
+
+<span class="pl-c">// Invoke method.</span>
+<span class="pl-smi">webApi</span>.<span class="pl-en">updateUser</span>({
+  url<span class="pl-k">:</span> { <span class="pl-s"><span class="pl-pds">"</span>id<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">10</span> }
+}).<span class="pl-en">success</span>( <span class="pl-c">// ...some actions...</span>
+</pre></div>
+
+<h3>
+<a id="-post-put-update-case-1-" class="anchor" href="#-post-put-update-case-1-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>*** POST, PUT, UPDATE. Case #1 ***</h3>
+
+<div class="highlight highlight-source-js"><pre>
+<span class="pl-c">// url -&gt; http://yourdomain.com/api/login</span>
+<span class="pl-c">// model -&gt; { Login: "test", Password: "test1" }</span>
 
 <span class="pl-c">// Declare request.</span>
 { Url<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>api/login<span class="pl-pds">'</span></span>, CustomOptions<span class="pl-k">:</span> <span class="pl-c1">false</span>, Method<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>post<span class="pl-pds">'</span></span>, InvokeName<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>login<span class="pl-pds">'</span></span> }
 
-<span class="pl-c">// Invoke method and specify an appropriate arguments.</span>
+<span class="pl-c">// Invoke method.</span>
 <span class="pl-k">var</span> request <span class="pl-k">=</span> {
   Login<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>test<span class="pl-pds">"</span></span>,
   <span class="pl-c1">Password</span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>test1<span class="pl-pds">"</span></span>
 };
 <span class="pl-smi">webApi</span>.<span class="pl-en">login</span>(request).<span class="pl-en">success</span>( <span class="pl-c">// ...some actions...</span>
-
-<span class="pl-c">// Your request is: http://yourdomain.com/api/login</span>
-<span class="pl-c">// Request model is: { Login: "test", Password: "test1" }</span>
 </pre></div>
 
 <h3>
-<a id="-put-methods-" class="anchor" href="#-put-methods-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>*** PUT-methods ***</h3>
+<a id="-post-put-update-case-2-" class="anchor" href="#-post-put-update-case-2-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>*** POST, PUT, UPDATE. Case #2 ***</h3>
 
-<div class="highlight highlight-source-js"><pre><span class="pl-c">/*************************************/</span>
-<span class="pl-c">/* Update user details. */</span>
-<span class="pl-c">/*************************************/</span>
+<div class="highlight highlight-source-js"><pre>
+<span class="pl-c">// url -&gt; http://yourdomain.com/admin/manage/10/update</span>
+<span class="pl-c">// model -&gt; { "name": "Bob", "age": 20 }</span>
 
 <span class="pl-c">// Declare request.</span>
 { Url<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>admin/manage/{id}/{action}<span class="pl-pds">'</span></span>, CustomOptions<span class="pl-k">:</span> <span class="pl-c1">false</span>, Method<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>put<span class="pl-pds">'</span></span>, InvokeName<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>updateUser<span class="pl-pds">'</span></span> }
 
-<span class="pl-c">// Invoke method and specify an appropriate arguments.</span>
+<span class="pl-c">// Invoke method.</span>
 <span class="pl-smi">webApi</span>.<span class="pl-en">updateUser</span>({
   url<span class="pl-k">:</span> { <span class="pl-s"><span class="pl-pds">"</span>id<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">10</span>, <span class="pl-s"><span class="pl-pds">"</span>action<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>update<span class="pl-pds">"</span></span> },
   data<span class="pl-k">:</span> { <span class="pl-s"><span class="pl-pds">"</span>name<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>Bob<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>age<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">20</span> }
 }).<span class="pl-en">success</span>( <span class="pl-c">// ...some actions...</span>
-
-<span class="pl-c">// Your request is: http://yourdomain.com/admin/manage/10/update</span>
-<span class="pl-c">// Request model is: { "name": "Bob", "age": 20 }</span>
-</pre></div>
-
-<h3>
-<a id="-delete-methods-" class="anchor" href="#-delete-methods-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>*** DELETE-methods ***</h3>
-
-<div class="highlight highlight-source-js"><pre><span class="pl-c">/*************************************/</span>
-<span class="pl-c">/* Delete user. */</span>
-<span class="pl-c">/*************************************/</span>
-
-<span class="pl-c">// Declare request.</span>
-{ Url<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>admin/delete-user/{id}<span class="pl-pds">'</span></span>, CustomOptions<span class="pl-k">:</span> <span class="pl-c1">false</span>, Method<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>delete<span class="pl-pds">'</span></span>, InvokeName<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>deleteUser<span class="pl-pds">'</span></span> }
-
-<span class="pl-c">// Invoke method and specify an appropriate arguments.</span>
-<span class="pl-smi">webApi</span>.<span class="pl-en">updateUser</span>({
-  url<span class="pl-k">:</span> { <span class="pl-s"><span class="pl-pds">"</span>id<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">10</span> }
-}).<span class="pl-en">success</span>( <span class="pl-c">// ...some actions...</span>
-
-<span class="pl-c">// Your request is: http://yourdomain.com/admin/delete-user/10</span>
 </pre></div>
 
 <h3>
@@ -252,15 +180,26 @@ If using an object, just designate an appropriate field within request. Example:
   <span class="pl-c1">Password</span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>pass<span class="pl-pds">'</span></span>,
   options<span class="pl-k">:</span> {<span class="pl-s"><span class="pl-pds">"</span>timeout<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">100</span>}
 });</pre></div>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="owner">
+      <p><a href="https://github.com/asduser" class="avatar"><img src="https://avatars1.githubusercontent.com/u/9800987?v=3&amp;s=60" width="48" height="48"></a> <a href="https://github.com/asduser">asduser</a> maintains <a href="https://github.com/asduser/webApi-angularjs">Webapi-angularjs</a></p>
 
-      <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/asduser/webApi-angularjs">Webapi-angularjs</a> is maintained by <a href="https://github.com/asduser">asduser</a>.</span>
 
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
-      </footer>
-
-    </section>
+      </div>
+      <div class="creds">
+        <small>This page generated using <a href="https://pages.github.com/">GitHub Pages</a><br>theme by <a href="https://twitter.com/jonrohan/">Jon Rohan</a></small>
+      </div>
+    </footer>
+  </div>
+  <div class="current-section">
+    <a href="#top">Scroll to top</a>
+    <a href="https://github.com/asduser/webApi-angularjs/tarball/master" class="tar">tar</a><a href="https://github.com/asduser/webApi-angularjs/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
+    <p class="name"></p>
+  </div>
 
   
-  </body>
+</body>
 </html>

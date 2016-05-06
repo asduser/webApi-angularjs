@@ -1,5 +1,7 @@
-# webApi-angularjs
-RESTful webApi module using Angular.js.
+# webApi module
+Definitely simplifies your work with server side & organizes webApi layout to further managing.
+
+![Image](https://github.com/asduser/examples/blob/gh-pages/images/angularjs-restful-api.png?raw=true)
 
 ## How to use
 

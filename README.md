@@ -1,5 +1,5 @@
 # webApi module
-Definitely simplifies your work with server side & organizes webApi layout to further managing.
+Definitely simplifies your work with server side and organizes webApi layout to further managing.
 
 A special template helps use in your code url in format: *"api/manage/news/{query}/{pageSize}/{pageNumber}"* as simple as it possible.
 

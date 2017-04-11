@@ -154,3 +154,11 @@ webApi.login({
   options: {"timeout": 100}
 });
 ```
+
+
+
+## Licence
+
+MIT License
+
+Copyright (c) 2017 [asduser](https://github.com/asduser)
